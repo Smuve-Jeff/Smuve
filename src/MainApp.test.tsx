@@ -8,6 +8,11 @@ vi.mock('./services/AuthContext', () => ({
   useAuth: vi.fn(),
 }));
 
+// Mock the LoginView component
+vi.mock('./LoginView', () => ({
+  default: () => <div>Login</div>,
+}));
+
 describe('MainApp', () => {
   it('renders LoginView when not authenticated', () => {
     // Arrange
