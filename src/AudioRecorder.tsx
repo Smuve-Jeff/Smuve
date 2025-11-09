@@ -1,15 +1,15 @@
 import React, { useState, useRef, useCallback, useEffect } from 'react';
-import Card from '../components/common/Card';
-import Button from '../components/common/Button';
-import MixerKnob from '../components/common/MixerKnob';
-import ToggleSwitch from '../components/common/ToggleSwitch';
-import WaveformDisplay from '../components/common/WaveformDisplay';
-import LevelMeter from '../components/common/LevelMeter';
-import { useGlobalAudio } from '../services/GlobalAudioContext';
-import { Clip } from '../types';
-import Spinner from '../components/common/Spinner';
-import { getMixingTipsForTrack } from '../services/geminiService';
-import { useToast } from '../services/ToastContext';
+import Card from './common/Card';
+import Button from './common/Button';
+import MixerKnob from './common/MixerKnob';
+import ToggleSwitch from './common/ToggleSwitch';
+import WaveformDisplay from './common/WaveformDisplay';
+import LevelMeter from './common/LevelMeter';
+import { useGlobalAudio } from './services/GlobalAudioContext';
+import { Clip } from './types';
+import Spinner from './common/Spinner';
+import { getMixingTipsForTrack } from './services/geminiService';
+import { useToast } from './services/ToastContext';
 
 interface AiMixModalProps {
   clip: Clip;

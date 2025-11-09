@@ -1,9 +1,9 @@
 import React, { useState, ChangeEvent } from 'react';
-import Card from '../components/common/Card';
-import Button from '../components/common/Button';
-import MixerKnob from '../components/common/MixerKnob';
-import WaveformDisplay from '../components/common/WaveformDisplay'; // Import WaveformDisplay
-import { useGlobalAudio } from '../services/GlobalAudioContext';
+import Card from './common/Card';
+import Button from './common/Button';
+import MixerKnob from './common/MixerKnob';
+import WaveformDisplay from './common/WaveformDisplay'; // Import WaveformDisplay
+import { useGlobalAudio } from './services/GlobalAudioContext';
 
 const MusicPlayer: React.FC = () => {
   const { 

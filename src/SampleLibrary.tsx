@@ -1,11 +1,11 @@
 import React, { useState, useMemo, useRef, useCallback, useEffect } from 'react';
-import { samples, Sample } from '../services/sampleData';
-import { useGlobalAudio } from '../services/GlobalAudioContext';
-import Card from '../components/common/Card';
-import Button from '../components/common/Button';
-import Spinner from '../components/common/Spinner';
-import { useAuth } from '../services/AuthContext';
-import { useToast } from '../services/ToastContext';
+import { samples, Sample } from './services/sampleData';
+import { useGlobalAudio } from './services/GlobalAudioContext';
+import Card from './common/Card';
+import Button from './common/Button';
+import Spinner from './common/Spinner';
+import { useAuth } from './services/AuthContext';
+import { useToast } from './services/ToastContext';
 
 interface UserSample extends Sample {
   isUserUploaded: boolean;

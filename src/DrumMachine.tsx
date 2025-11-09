@@ -1,13 +1,13 @@
 import React, { useState, useEffect, useRef, Fragment } from 'react';
-import Card from '../components/common/Card';
-import Button from '../components/common/Button';
-import MixerKnob from '../components/common/MixerKnob';
-import ToggleSwitch from '../components/common/ToggleSwitch';
-import Spinner from '../components/common/Spinner';
-import { useGlobalAudio } from '../services/GlobalAudioContext';
-import { generateDrumPattern } from '../services/geminiService';
-import { Note } from '../types';
-import { useToast } from '../services/ToastContext';
+import Card from './common/Card';
+import Button from './common/Button';
+import MixerKnob from './common/MixerKnob';
+import ToggleSwitch from './common/ToggleSwitch';
+import Spinner from './common/Spinner';
+import { useGlobalAudio } from './services/GlobalAudioContext';
+import { generateDrumPattern } from './services/geminiService';
+import { Note } from './types';
+import { useToast } from './services/ToastContext';
 
 
 const SpectrumVisualizer: React.FC<{ analyser: AnalyserNode | null }> = React.memo(({ analyser }) => {

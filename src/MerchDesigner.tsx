@@ -1,14 +1,14 @@
 import React, { useState, useCallback, lazy, Suspense, useEffect, useRef } from 'react';
-import Card from '../components/common/Card';
-import Button from '../components/common/Button';
-import Spinner from '../components/common/Spinner';
-import { useToast } from '../services/ToastContext';
-import { getMerchIdeas, generateMerchImage, editImage } from '../services/geminiService';
-import { useAiService } from '../services/AiServiceContext'; // For sharing content to AI manager
+import Card from './common/Card';
+import Button from './common/Button';
+import Spinner from './common/Spinner';
+import { useToast } from './services/ToastContext';
+import { getMerchIdeas, generateMerchImage, editImage } from './services/geminiService';
+import { useAiService } from './services/AiServiceContext'; // For sharing content to AI manager
 
 // Lazy load mockups
-const TshirtMockup = lazy(() => import('../components/merch/TshirtMockup'));
-const HoodieMockup = lazy(() => import('../components/merch/HoodieMockup'));
+const TshirtMockup = lazy(() => import('./merch/TshirtMockup'));
+const HoodieMockup = lazy(() => import('./merch/HoodieMockup'));
 
 type MerchType = 'tshirt' | 'hoodie';
 type GarmentColor = 'white' | 'black' | 'gray' | 'navy' | 'red';

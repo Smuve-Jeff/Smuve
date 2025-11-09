@@ -1,11 +1,11 @@
 
 import React, { useState, useCallback, useEffect } from 'react';
-import { getArtists, addArtist, updateArtist, deleteArtist, Artist } from '../services/artists';
-import Card from '../components/common/Card';
-import Button from '../components/common/Button';
-import Spinner from '../components/common/Spinner';
-import { useAiService } from '../services/AiServiceContext';
-import MapView from '../components/common/MapView';
+import { getArtists, addArtist, updateArtist, deleteArtist, Artist } from './services/artists';
+import Card from './common/Card';
+import Button from './common/Button';
+import Spinner from './common/Spinner';
+import { useAiService } from './services/AiServiceContext';
+import MapView from './common/MapView';
 
 interface ProConnectionStatus {
     [key: string]: 'idle' | 'connecting' | 'synced';

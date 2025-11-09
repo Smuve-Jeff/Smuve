@@ -1,7 +1,7 @@
 import React, { useRef, useEffect } from 'react';
-import Card from '../components/common/Card';
-import Button from '../components/common/Button';
-import { useGlobalAudio } from '../services/GlobalAudioContext';
+import Card from './common/Card';
+import Button from './common/Button';
+import { useGlobalAudio } from './services/GlobalAudioContext';
 
 // --- Reusable UI Components for the DJ Controller ---
 
