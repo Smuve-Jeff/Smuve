@@ -1,31 +1,40 @@
 {
-  "hash": "30369185",
+  "hash": "15ba0fd6",
   "configHash": "c513340a",
-  "lockfileHash": "cc558fcf",
-  "browserHash": "4607a911",
+  "lockfileHash": "25d67344",
+  "browserHash": "a80fd8da",
   "optimized": {
     "react/jsx-dev-runtime": {
       "src": "../../node_modules/react/jsx-dev-runtime.js",
       "file": "react_jsx-dev-runtime.js",
-      "fileHash": "f2a283b2",
+      "fileHash": "3d9c5c6f",
       "needsInterop": true
     },
     "react": {
       "src": "../../node_modules/react/index.js",
       "file": "react.js",
-      "fileHash": "05e649cd",
+      "fileHash": "c316a5d4",
       "needsInterop": true
     },
     "react-dom/client": {
       "src": "../../node_modules/react-dom/client.js",
       "file": "react-dom_client.js",
-      "fileHash": "0c4d3b9d",
+      "fileHash": "00ddd2e1",
       "needsInterop": true
+    },
+    "react-router-dom": {
+      "src": "../../node_modules/react-router-dom/dist/index.mjs",
+      "file": "react-router-dom.js",
+      "fileHash": "eaf4b063",
+      "needsInterop": false
     }
   },
   "chunks": {
-    "chunk-TDVGPZLM": {
-      "file": "chunk-TDVGPZLM.js"
+    "chunk-QS7ZE27V": {
+      "file": "chunk-QS7ZE27V.js"
+    },
+    "chunk-OBOR3357": {
+      "file": "chunk-OBOR3357.js"
     }
   }
 }
