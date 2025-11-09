@@ -1,10 +1,13 @@
 
 import React from 'react';
 import MainApp from './MainApp';
+import { AuthProvider } from './services/AuthContext';
 
 const App: React.FC = () => {
   return (
-    <MainApp />
+    <AuthProvider>
+      <MainApp />
+    </AuthProvider>
   );
 };
 

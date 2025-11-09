@@ -1,16 +1,14 @@
-import React, { useState, useEffect } from 'react';
-import { View } from '../../types';
-import { useAuth } from '../../services/AuthContext'; // Import useAuth
 
-interface User {
-  username: string;
-}
+import React, { useState, useEffect } from 'react';
+import { signOut, User } from 'firebase/auth';
+import { View } from '../types';
+import { useAuth } from '../services/AuthContext';
+import { auth } from '../firebase';
 
 interface SidebarProps {
   currentView: View;
   onNavigate: (view: View) => void;
   currentUser: User | null;
-  onLogout: () => void;
 }
 
 interface NavItemProps {
@@ -38,9 +36,9 @@ const NavItem: React.FC<NavItemProps> = React.memo(({ id, icon, label, isActive,
 ));
 NavItem.displayName = 'NavItem';
 
-const Sidebar: React.FC<SidebarProps> = ({ currentView, onNavigate, currentUser, onLogout }) => {
+const Sidebar: React.FC<SidebarProps> = ({ currentView, onNavigate, currentUser }) => {
   const [installPrompt, setInstallPrompt] = useState<any>(null);
-  const { isAuthenticated, toggleAuthModal } = useAuth(); // Use isAuthenticated and toggleAuthModal
+  const { isAuthenticated, toggleAuthModal } = useAuth();
 
   useEffect(() => {
     const handler = (e: Event) => {
@@ -63,6 +61,14 @@ const Sidebar: React.FC<SidebarProps> = ({ currentView, onNavigate, currentUser,
     setInstallPrompt(null);
   };
 
+  const handleLogout = async () => {
+    try {
+      await signOut(auth);
+    } catch (error) {
+      console.error('Error signing out:', error);
+    }
+  };
+
   const navItems = [
     { id: 'sidebar-ai-manager', icon: 'fa-brain', label: 'AI Manager', view: View.AiManager },
     { id: 'sidebar-lyrics', icon: 'fa-feather-alt', label: 'Lyrics', view: View.Notepad },
@@ -72,7 +78,7 @@ const Sidebar: React.FC<SidebarProps> = ({ currentView, onNavigate, currentUser,
     { id: 'sidebar-vocal-booth', icon: 'fa-microphone', label: 'Vocal Booth', view: View.AudioRecorder },
     { id: 'sidebar-drum-machine', icon: 'fa-drum', label: 'Drum Machine', view: View.DrumMachine },
     { id: 'sidebar-artist-hub', icon: 'fa-gem', label: 'Artist Hub', view: View.ArtistHub },
-    { id: 'sidebar-merch-designer', icon: 'fa-tshirt', label: 'Merch Designer', view: View.MerchDesigner }, // New: Merch Designer
+    { id: 'sidebar-merch-designer', icon: 'fa-tshirt', label: 'Merch Designer', view: View.MerchDesigner },
     { id: 'sidebar-analytics', icon: 'fa-chart-bar', label: 'Analytics', view: View.Analytics },
     { id: 'sidebar-tha-spot', icon: 'fa-gamepad', label: 'Tha Spot', view: View.TheSpot }, 
   ];
@@ -115,7 +121,7 @@ const Sidebar: React.FC<SidebarProps> = ({ currentView, onNavigate, currentUser,
           </button>
         )}
         <a
-          href="https://play.google.com/store/apps/details?id=com.smuve.ai.music.manager" // Placeholder URL
+          href="https://play.google.com/store/apps/details?id=com.smuve.ai.music.manager"
           target="_blank"
           rel="noopener noreferrer"
           className="w-full flex items-center justify-center p-3 rounded-lg transition-colors duration-200 bg-yellow-600/80 text-white shadow-lg hover:bg-yellow-500/80"
@@ -126,10 +132,10 @@ const Sidebar: React.FC<SidebarProps> = ({ currentView, onNavigate, currentUser,
         </a>
 
         <div className="border-t border-gray-700/50 pt-4 text-center">
-            {currentUser && <p className="text-sm text-gray-400 mb-2">Logged in as <strong className="text-gray-200">{currentUser.username}</strong></p>}
+            {currentUser && <p className="text-sm text-gray-400 mb-2">Logged in as <strong className="text-gray-200">{currentUser.email}</strong></p>}
             {isAuthenticated ? (
                 <button
-                    onClick={onLogout}
+                    onClick={handleLogout}
                     className="w-full flex items-center justify-center p-3 rounded-lg transition-colors duration-200 bg-red-800/70 text-red-200 shadow-lg hover:bg-red-700/70"
                     aria-label="Logout"
                 >
@@ -138,7 +144,7 @@ const Sidebar: React.FC<SidebarProps> = ({ currentView, onNavigate, currentUser,
                 </button>
             ) : (
                 <button
-                    onClick={() => toggleAuthModal(true)} // Open AuthModal when not authenticated
+                    onClick={() => toggleAuthModal(true)}
                     className="w-full flex items-center justify-center p-3 rounded-lg transition-colors duration-200 bg-indigo-600 text-white shadow-lg hover:bg-indigo-500"
                     aria-label="Login / Register"
                 >

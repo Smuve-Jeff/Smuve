@@ -1,8 +1,9 @@
 
 import React, { useState } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { useAuth } from './services/AuthContext';
 import MatrixBackground from './MatrixBackground';
-import Sidebar from './Sidebar';
+import Sidebar from './layout/Sidebar';
 import TheSpot from './TheSpot';
 import ArtistHub from './ArtistHub';
 import MerchDesigner from './MerchDesigner';
@@ -15,19 +16,26 @@ import Analytics from './Analytics';
 import AiManager from './AiManager';
 import Notepad from './Notepad';
 import LoginView from './LoginView';
+import { View } from './types';
 
 const MainApp: React.FC = () => {
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const { isAuthenticated, currentUser } = useAuth();
+  const [currentView, setCurrentView] = useState<View>(View.TheSpot);
 
-  if (!isLoggedIn) {
-    return <LoginView onLogin={() => setIsLoggedIn(true)} />;
+  if (!isAuthenticated) {
+    return <LoginView />;
   }
 
   return (
     <Router>
       <MatrixBackground />
       <div className="app-container">
-        <Sidebar />
+        <Sidebar 
+          currentView={currentView} 
+          onNavigate={setCurrentView} 
+          currentUser={currentUser} 
+          onLogout={() => {}} 
+        />
         <div className="main-content">
           <Routes>
             <Route path="/" element={<TheSpot />} />
