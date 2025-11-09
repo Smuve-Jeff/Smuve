@@ -1,0 +1,9 @@
+{
+  "name": "S.M.U.V.E. 4.0",
+  "description": "Smuve Jeff Presents: AI Music Manager{ S.M.U.V.E }\nAn all-in-one AI-powered music manager and creative studio for independent artists. Organize, practice, and create with tools like a drum machine, merch designer, video editor, and more, all enhanced with generative AI.\n\nA special thank you to my Senior Frontend Engineer & UI/UX Designer for their world-class expertise.",
+  "requestFramePermissions": [
+    "microphone",
+    "geolocation",
+    "camera"
+  ]
+}

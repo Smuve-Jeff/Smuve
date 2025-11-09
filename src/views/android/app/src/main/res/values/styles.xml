@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Theme.Twa" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- The TWA launcher activity will use this style to show a splash screen. -->
+        <item name="android:windowBackground">@drawable/splash</item>
+        
+        <!-- Status bar color for the splash screen. -->
+        <item name="android:statusBarColor">@color/statusBarColor</item>
+    </style>
+</resources>
