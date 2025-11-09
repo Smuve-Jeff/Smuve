@@ -1,5 +1,5 @@
 import React from 'react';
-import { useAiService, Persona } from '../../services/AiServiceContext';
+import { useAiService, Persona } from '../services/AiServiceContext';
 import { avatarConfigs } from './SmuveAvatar';
 import Button from '../common/Button';
 import Card from '../common/Card';
