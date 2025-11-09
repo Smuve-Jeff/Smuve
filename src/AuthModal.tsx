@@ -1,5 +1,5 @@
 import React, { useState, useMemo } from 'react';
-import { useAuth } from '../services/AuthContext';
+import { useAuth } from './services/AuthContext';
 import Card from './common/Card';
 import Button from './common/Button';
 import Spinner from './common/Spinner';

@@ -1,8 +1,8 @@
 import React, { useState, useCallback, useEffect, useRef } from 'react';
-import { getVideoStoryboard } from '../services/geminiService';
-import Card from '../components/common/Card';
-import Button from '../components/common/Button';
-import Spinner from '../components/common/Spinner';
+import { getVideoStoryboard } from './services/geminiService';
+import Card from './common/Card';
+import Button from './common/Button';
+import Spinner from './common/Spinner';
 
 const Toggle: React.FC<{ label: string; icon: string; color: string; }> = React.memo(({ label, icon, color }) => {
     const [isOn, setIsOn] = useState(false);

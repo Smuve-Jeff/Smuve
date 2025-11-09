@@ -1,13 +1,13 @@
 import React, { useState, useEffect, useRef, useCallback } from 'react';
-import { useAiService } from '../services/AiServiceContext';
-import Button from '../components/common/Button';
-import Card from '../components/common/Card';
-import Spinner from '../components/common/Spinner';
-import SmuveAvatar from '../components/layout/SmuveAvatar';
-import AvatarCustomizationModal from '../components/layout/AvatarCustomizationModal';
-import { View } from '../types';
-import Modal from '../components/common/Modal'; // Import the new reusable Modal
-import { useGlobalAudio } from '../services/GlobalAudioContext';
+import { useAiService } from './services/AiServiceContext';
+import Button from './common/Button';
+import Card from './common/Card';
+import Spinner from './common/Spinner';
+import SmuveAvatar from './layout/SmuveAvatar';
+import AvatarCustomizationModal from './layout/AvatarCustomizationModal';
+import { View } from './types';
+import Modal from './common/Modal'; // Import the new reusable Modal
+import { useGlobalAudio } from './services/GlobalAudioContext';
 
 // The parseMarkdown function is removed from here as it's now centralized in src/components/common/Modal.tsx
 // All markdown parsing for modals will be handled by the Modal component's internal logic.
