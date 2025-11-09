@@ -13,8 +13,8 @@
             "adbPort": 5037
         },
         {
-            "command": "npm start",
-            "name": "Run npm start",
+            "command": "npm run dev",
+            "name": "Run npm dev",
             "request": "launch",
             "type": "node-terminal"
         },
